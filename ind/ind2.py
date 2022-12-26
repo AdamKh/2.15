@@ -25,13 +25,13 @@ if __name__ == '__main__':
         except IOError as e:
             print('Не удалось открыть файл с именем ', path)
         else:
-            with open(path, "r", encoding="utf-8") as file:
-                for i in file:
-                    k += 1
-                    if i.startswith('#'):
-                        f = True
-                    if f and i.startswith('d'):
-                        f = False
-                        d = i.split(' ')[1]
-                        print('Номер строки - ', k, ', имя файла - ',
-                              file.name, ', функция - ', d[: d.find('(')])
+            for i in file:
+                k += 1
+                if i.startswith('#'):
+                    f = True
+                if f and i.startswith('d'):
+                    f = False
+                    d = i.split(' ')[1]
+                    print('Номер строки - ', k, ', имя файла - ',
+                    file.name, ', функция - ', d[: d.find('(')])
+    file.close()

@@ -7,12 +7,6 @@
 """
 
 if __name__ == '__main__':
-    # Все предложения
-    s = ''
-    # Вопросительные предложения
-    A = ''
-    # Восклицательные предложения
-    B = ''
     with open("ind1.txt", "r", encoding="utf-8") as f:
         text = f.read()
         A = text.count("?")
